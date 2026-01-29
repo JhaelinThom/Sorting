@@ -9,7 +9,13 @@ public static void main(String[] args) {
 //4. Main method means its where our file will run 
 	
 int myArray [] = {1, 23,3000,12,8,5,13,22,18,35,21,17,15,2};
+singleLinkedList list = new singleLinkedList();
+list.addHead(5);
 
+list.addLast(100);
+
+list.display();
+System.out.println();
 
 BubbleSort myBubble = new BubbleSort(); //Instance variable 
 myBubble.bubbleSort(myArray);
@@ -22,7 +28,9 @@ myInsert.insertionSort(myArray);
 
 
 System.out.println("All sorts done!");
+
 	}
+
 
 /* I could likely add a for each loop in here and call each one for easier printing
  * First lesson for DSA so far, will need to upload Linked Lists next 
