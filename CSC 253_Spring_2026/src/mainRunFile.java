@@ -20,7 +20,9 @@ myMin.selectionSort(myArray);
 
 InsertionSort myInsert = new InsertionSort(); //Instance variable 
 myInsert.insertionSort(myArray);
-		
+
+
+System.out.println("All sorts done!");
 	}
 
 /* I could likely add a for each loop in here and call each one for easier printing
