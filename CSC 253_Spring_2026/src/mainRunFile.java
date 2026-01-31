@@ -11,10 +11,9 @@ public static void main(String[] args) {
 int myArray [] = {1, 23,3000,12,8,5,13,22,18,35,21,17,15,2};
 singleLinkedList list = new singleLinkedList();
 list.addHead(5);
-
 list.addLast(100);
 
-list.display();
+list.traverseList();
 System.out.println();
 
 BubbleSort myBubble = new BubbleSort(); //Instance variable 

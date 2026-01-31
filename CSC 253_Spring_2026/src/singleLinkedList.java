@@ -1,5 +1,6 @@
 
 public class singleLinkedList {
+	//Main Container 
     private Node head;
     private Node tail;
     public int size;
@@ -7,7 +8,9 @@ public class singleLinkedList {
     // Inner Node class
     private class Node {
         int data;
+        Node cur;
         Node next;
+        
         
         public Node(int data) {
             this.data = data;
@@ -30,6 +33,7 @@ public class singleLinkedList {
         size++;
 
     }
+   
     public void addLast(int data) {
     	Node newNode = new Node(data);
     	
@@ -42,17 +46,25 @@ else {
 	tail = newNode;
 }
 size++;
-    	
     	}
     
-    public void display() {
-    	Node temp = head;
-    	while (temp!=null) {
-    		System.out.print(temp.data + " --> " );
-    		temp = temp.next;
-    		
-    	}
-    	System.out.println("END.");
+    //Method to remove head from the beginning 
+   public void removeHead(int data) {
+	   if (head == null) {
+		   System.out.println("List is empty.");
+	   }
+	   head = head.next; //Didn't realize this was so simple 
+
+   }
+   
+   //Changed it to traverse list, I like the wording here more than before 
+public void traverseList() {
+	Node cur = head;
+	while (cur!=null) {
+		System.out.print(cur.data + " ---> " );
+		cur = cur.next;
+	}
+	System.out.println(" END.");
     	
     }
 }
