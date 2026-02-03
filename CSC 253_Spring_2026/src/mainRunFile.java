@@ -9,12 +9,15 @@ public static void main(String[] args) {
 //4. Main method means its where our file will run 
 	
 int myArray [] = {1, 23,3000,12,8,5,13,22,18,35,21,17,15,2};
-singleLinkedList list = new singleLinkedList();
-list.addHead(5);
-list.addLast(100);
+doublyLinkedList list = new doublyLinkedList();
+list.addLast(5);
+list.addLast(10);
+list.addLast(20);
 
-list.traverseList();
+//list.traverseListForward();
+list.traverseListBackward();
 System.out.println();
+list.traverseListForward();
 
 BubbleSort myBubble = new BubbleSort(); //Instance variable 
 myBubble.bubbleSort(myArray);

@@ -1,5 +1,5 @@
 
-public class singleLinkedList {
+public class doublyLinkedList {
 	//Main Container 
     private Node head;
     private Node tail;
@@ -8,13 +8,13 @@ public class singleLinkedList {
     // Inner Node class
     private class Node {
         int data;
-        Node cur;
         Node next;
-        
+        Node prev;
         
         public Node(int data) {
             this.data = data;
             this.next = null;
+            this.prev = null;
         }
     }
     
@@ -26,7 +26,7 @@ public class singleLinkedList {
     		head = newNode;
     		tail = newNode;
     	}else {
-    		
+    	head.prev = newNode;
         newNode.next = head;             // Point it to current head
         head = newNode;                  // Make it the new head
     }
@@ -43,6 +43,7 @@ if (head == null) {
 }
 else {
 	tail.next = newNode;
+	newNode.prev = tail;
 	tail = newNode;
 }
 size++;
@@ -52,19 +53,41 @@ size++;
    public void removeHead(int data) {
 	   if (head == null) {
 		   System.out.println("List is empty.");
-	   }
-	   head = head.next; //Didn't realize this was so simple 
+		   return;
 
+	   }
+	   head = head.next;
+	   //This helps confirm if the list is empty after the removal
+	   if (head !=null) {
+		   head.prev = null;
+	   }
+	   else {
+		   tail = null;
+	   }
+	   size--;
+	   
    }
    
    //Changed it to traverse list, I like the wording here more than before 
-public void traverseList() {
+public void traverseListForward() {
 	Node cur = head;
 	while (cur!=null) {
 		System.out.print(cur.data + " ---> " );
 		cur = cur.next;
 	}
-	System.out.println(" END.");
+	System.out.println(" Null.");
     	
     }
+
+public void traverseListBackward() {
+	Node cur = tail;
+	while (cur!= null) {
+		System.out.print(cur.data + " <---" );
+		cur = cur.prev;
+		
+	}
+	System.out.println("Done printing backwards!");
+}
+
+
 }
